@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-accent: #C4512D;
+    --brand-accent-hover: #A94222;
+    --brand-accent-soft: #FCECE6;
+    --app-bg: #F3F4F6;
+    --surface-bg: #FFFFFF;
+    --text-primary: #242424;
+    --text-secondary: #616161;
+    --border-color: #DADCE0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Inter, Aptos, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--app-bg);
+    color: var(--text-primary);
+    overflow: hidden;
+  }
+}
+
+/* Custom thin scrollbars for productivity UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD0D6;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9AA0A6;
+}
+
+/* Tiptap editor reset inside slides */
+.ProseMirror {
+  outline: none;
+  min-height: 1em;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+}
+
+/* Print styles for handouts and slides */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    overflow: visible !important;
+    background: #FFFFFF !important;
+  }
+}
+
